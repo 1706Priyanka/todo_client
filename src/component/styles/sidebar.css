@@ -1,0 +1,22 @@
+.side-bar {
+  width: 251px;
+  height: 80vh;
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logout-container {
+  height: 100%;
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout {
+  margin-top: 180%;
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+}

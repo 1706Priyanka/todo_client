@@ -1,0 +1,38 @@
+.container {
+  background-color: steelblue;
+  height: 50vh;
+  width: 40vw;
+  padding: 20px;
+  margin-left: 400px;
+  margin-top: 40px;
+  border-radius: 30px;
+}
+
+.signUp-container {
+  background-color: rgb(174, 171, 171);
+  height: 40vh;
+  width: 40vh;
+  margin-left: 140px;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+input {
+  padding: 4px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 7px;
+  background-color: lightcoral;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.error {
+  font-size: small;
+  color: red;
+}
