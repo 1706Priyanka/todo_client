@@ -8,7 +8,7 @@ export const ContextProvider = (props) => {
   const nav = useNavigate();
   const userSignIn = (loginData) => {
     axios
-      .post("http://localhost:5000/login", loginData)
+      .post("https://todo-backend-5guz.onrender.com/login", loginData)
       .then((res) => {
         const token = res.data.token;
         localStorage.setItem("token", token);
@@ -27,7 +27,7 @@ export const ContextProvider = (props) => {
   const userSignUp = (userData) => {
     try {
       axios
-        .post("http://localhost:5000/register", userData)
+        .post("https://todo-backend-5guz.onrender.com/register", userData)
         .then((res) => {
           nav("/");
           window.alert("registered successfully");
