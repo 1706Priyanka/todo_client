@@ -1,7 +1,7 @@
 import React from "react";
+import NavTable from "./NavTable";
 import Sidebar from "./Sidebar";
 import "./styles/header.css";
-import Table from "./Table";
 
 function Header() {
   const user = localStorage.getItem("email").split("@")[0].toUpperCase();
@@ -26,7 +26,7 @@ function Header() {
         </nav>
       </div>
       <div>
-        <Table />
+        <NavTable />
       </div>
     </>
   );

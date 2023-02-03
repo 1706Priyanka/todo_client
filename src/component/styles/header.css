@@ -17,6 +17,16 @@
   font-weight: 600;
 }
 
+.addTask {
+  border: 2px solid black;
+
+  margin-left: 800px;
+}
+
+.addactivity {
+  margin-left: 800px;
+}
+
 .table {
   margin-left: 500px;
   margin-top: -500px;

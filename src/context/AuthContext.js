@@ -1,10 +1,11 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 export const context = createContext();
 
 export const ContextProvider = (props) => {
   const [email, setEmail] = useState("");
+  const [todo, setTodo] = useState([]);
   const nav = useNavigate();
   const userSignIn = (loginData) => {
     axios
@@ -40,10 +41,47 @@ export const ContextProvider = (props) => {
     }
   };
 
+  const config = {
+    headers: {
+      token: localStorage.getItem("token"),
+    },
+  };
+
+  const postTodo = async (TodoData) => {
+    return await axios
+      .post("https://todo-backend-5guz.onrender.com/create", TodoData, config)
+      .then((res) => {
+        document.location.reload();
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+      });
+  };
+
+  const getTodo = () => {
+    try {
+      axios
+        .get("https://todo-backend-5guz.onrender.com/allTodo", config)
+        .then((res) => {
+          const data = res.data.users[0].todo;
+          setTodo(data);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getTodo();
+  }, []);
+
   return (
     <context.Provider
       value={{
         userSignIn,
+        todo,
+        postTodo,
+        getTodo,
         email,
         userSignUp,
       }}
